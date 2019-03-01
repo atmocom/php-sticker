@@ -108,6 +108,7 @@ function calc_wind_arrow($x, $y, $d, $px)
 function dbget_last()
 {
 	global $dbFile;
+	if(!file_exists($dbFile)) die();
 	try {
 		$db = new PDO('sqlite:' . $dbFile);
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
